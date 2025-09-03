@@ -1,17 +1,18 @@
 "use client";
 
+import React from "react";
 import { motion } from "framer-motion";
-import { useState } from "react";
 import { Linkedin, LucideChevronRight, XIcon } from "lucide-react";
-import HireDialog from "../HireDialog";
 
 const Footer = () => {
-  const [open, setOpen] = useState(false);
-  const [hired, setHired] = useState(false);
+  const [hired, setHired] = React.useState(false);
 
-  const handleToggle = () => {
+  const handleClick = () => {
     setHired(true);
-    setOpen(true);
+    window.open(
+      "https://calendly.com/chukwunoyelummesoma1/interview-recruiters-and-potential-clients",
+      "_blank"
+    );
   };
 
   return (
@@ -28,9 +29,9 @@ const Footer = () => {
           Let‘s Connect <br /> There
         </h2>
 
-        {/* Hire Toggle Button */}
+        {/* Hire Button */}
         <div
-          onClick={handleToggle}
+          onClick={handleClick}
           className={`relative w-48 h-14 flex items-center cursor-pointer rounded-full px-2 transition-colors duration-500 ${
             hired ? "bg-green-400" : "bg-gray-300"
           }`}
@@ -120,7 +121,7 @@ const Footer = () => {
         >
           <p>© {new Date().getFullYear()} All rights reserved — Mmesoma David</p>
 
-          <div className="flex gap-6">
+          <div className="flex gap-6 flex-wrap">
             <a href="#" className="hover:text-gray-300 transition">
               Portfolio
             </a>
@@ -136,9 +137,6 @@ const Footer = () => {
           </div>
         </motion.div>
       </div>
-
-      {/* Hire Dialog */}
-      <HireDialog open={open} setOpen={setOpen} />
     </footer>
   );
 };
