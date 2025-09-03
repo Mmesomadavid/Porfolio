@@ -68,7 +68,7 @@ const Hero = () => {
         </p>
         <div className="mt-6 sm:mt-8 flex flex-col sm:flex-row justify-center gap-3 sm:gap-4">
           <motion.a
-            href="#projects"
+            href="https://github.com/Mmesomadavid"
             className="px-4 py-2 sm:px-6 sm:py-3 rounded-full bg-black text-white font-medium"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
@@ -76,7 +76,7 @@ const Hero = () => {
             Explore My Work
           </motion.a>
           <motion.a
-            href="#contact"
+            href="https://www.linkedin.com/in/mmesoma-david/"
             className="px-4 sm:px-6 flex gap-2 sm:gap-3 py-2 sm:py-3 rounded-full border border-black text-black font-medium justify-center"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
