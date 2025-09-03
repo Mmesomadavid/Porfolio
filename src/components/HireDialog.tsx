@@ -15,19 +15,9 @@ import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 import { Label } from "./ui/label";
 import { Textarea } from "./ui/textarea";
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from "./ui/popover";
+import { Popover, PopoverContent, PopoverTrigger } from "./ui/popover";
 import { Calendar } from "./ui/calendar";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "./ui/select";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "./ui/select";
 import { ScrollArea } from "./ui/scroll-area";
 
 interface HireDialogProps {
@@ -40,18 +30,20 @@ const HireDialog = ({ open, setOpen }: HireDialogProps) => {
 
   return (
     <Dialog open={open} onOpenChange={setOpen}>
-      <DialogContent className="sm:max-w-2xl max-h-full p-6">
+      <DialogContent className="w-full sm:max-w-2xl max-h-full p-4 sm:p-6">
         <DialogHeader>
-          <DialogTitle className="text-2xl font-bold">Hire Mmesoma David</DialogTitle>
-          <DialogDescription>
+          <DialogTitle className="text-xl sm:text-2xl font-bold">
+            Hire Mmesoma David
+          </DialogTitle>
+          <DialogDescription className="text-sm sm:text-base mt-1">
             Please fill in your details so I can get back to you quickly.
           </DialogDescription>
         </DialogHeader>
 
-        <ScrollArea className="max-h-[55vh] pr-4 mt-4">
+        <ScrollArea className="max-h-[55vh] pr-2 sm:pr-4 mt-4">
           <form className="space-y-4">
             {/* First + Last Name */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
                 <Label htmlFor="firstName">First Name</Label>
                 <Input id="firstName" placeholder="John" className="h-12 rounded-2xl" />
@@ -63,7 +55,7 @@ const HireDialog = ({ open, setOpen }: HireDialogProps) => {
             </div>
 
             {/* Email + Secondary Email */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
                 <Label htmlFor="email">Email</Label>
                 <Input id="email" type="email" placeholder="you@company.com" className="h-12 rounded-2xl" />
@@ -86,7 +78,7 @@ const HireDialog = ({ open, setOpen }: HireDialogProps) => {
             </div>
 
             {/* Company + Position */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
                 <Label htmlFor="company">Company Name</Label>
                 <Input id="company" placeholder="Company Inc." className="h-12 rounded-2xl" />
@@ -101,7 +93,7 @@ const HireDialog = ({ open, setOpen }: HireDialogProps) => {
             <div>
               <Label>Hiring From</Label>
               <Select>
-                <SelectTrigger className="h-12 rounded-2xl">
+                <SelectTrigger className="h-12 rounded-2xl w-full">
                   <SelectValue placeholder="Select a country" />
                 </SelectTrigger>
                 <SelectContent>
