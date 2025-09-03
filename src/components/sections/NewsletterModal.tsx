@@ -29,16 +29,18 @@ const NewsletterModal = ({ onSubscribe, onClose, open }: NewsletterModalProps) =
 
   return (
     <Dialog open={open} onOpenChange={(val) => !val && onClose()}>
-      <DialogContent className="sm:max-w-md rounded-3xl border border-gray-300">
+      <DialogContent className="w-full sm:max-w-md rounded-3xl border border-gray-300 p-4 sm:p-6">
         <DialogHeader>
-          <DialogTitle className="text-3xl Geist">Subscribe to my Newsletter</DialogTitle>
-          <DialogDescription>
+          <DialogTitle className="text-2xl sm:text-3xl font-bold">
+            Subscribe to my Newsletter
+          </DialogTitle>
+          <DialogDescription className="mt-1 text-sm sm:text-base text-gray-600">
             Stay updated with my latest blogs and updates on LinkedIn or Medium.
           </DialogDescription>
         </DialogHeader>
 
         {/* Image Banner */}
-        <div className="w-full h-32 rounded-2xl overflow-hidden mt-4">
+        <div className="w-full h-24 sm:h-32 rounded-2xl overflow-hidden mt-4">
           <img
             src={Email3DImg}
             alt="Newsletter Banner"
@@ -46,18 +48,18 @@ const NewsletterModal = ({ onSubscribe, onClose, open }: NewsletterModalProps) =
           />
         </div>
 
-        {/* Email Input + Button inside input */}
-        <div className="relative mt-6">
+        {/* Email Input + Button */}
+        <div className="mt-4 sm:mt-6 flex flex-col sm:flex-row gap-3">
           <Input
             type="email"
             placeholder="Enter your email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className="rounded-3xl pr-32 h-14" // extra padding for button
+            className="flex-1 rounded-3xl h-12 sm:h-14 pr-0 sm:pr-32"
           />
           <Button
             onClick={handleSubscribe}
-            className="absolute right-1 top-1 bottom-1 rounded-3xl px-8 h-12"
+            className="w-full sm:w-auto rounded-3xl px-6 sm:px-8 h-12 sm:h-12 flex-shrink-0"
           >
             Subscribe
           </Button>
