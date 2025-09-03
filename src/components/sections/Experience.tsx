@@ -50,14 +50,16 @@ const Experience = () => {
   }
 
   return (
-    <section className="mx-auto px-20 py-20 bg-zinc-100">
-      <h2 className="text-3xl md:text-4xl font-bold mb-2">Experience</h2>
-      <h3 className="text-lg text-gray-600 mb-10">
+    <section className="mx-auto px-4 sm:px-6 md:px-20 py-10 sm:py-20 bg-zinc-100">
+      <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-2">
+        Experience
+      </h2>
+      <h3 className="text-sm sm:text-base text-gray-600 mb-6 sm:mb-10">
         A yearly snapshot of my growth
       </h3>
 
       <motion.div
-        className="grid gap-8"
+        className="grid gap-4 sm:gap-6"
         initial="hidden"
         whileInView="show"
         viewport={{ once: true }}
@@ -67,15 +69,19 @@ const Experience = () => {
             key={i}
             onClick={() => toggleExperience(i)}
             layout
-            className="p-6 rounded-xl cursor-pointer bg-zinc-100 hover:bg-zinc-300 transition-colors"
+            className="p-4 sm:p-6 rounded-xl cursor-pointer bg-zinc-100 hover:bg-zinc-300 transition-colors"
           >
-            <div className="flex justify-between items-center">
+            <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 sm:gap-0">
               <div>
-                <h4 className="text-2xl md:text-3xl font-semibold">{exp.title}</h4>
-                <p className="text-gray-500">{exp.company}</p>
+                <h4 className="text-xl sm:text-2xl md:text-3xl font-semibold">
+                  {exp.title}
+                </h4>
+                <p className="text-gray-500 text-sm sm:text-base">{exp.company}</p>
               </div>
-              <div className="flex items-center gap-2">
-                <span className="text-4xl font-bold text-black">{exp.duration}</span>
+              <div className="flex items-center gap-2 mt-2 sm:mt-0">
+                <span className="text-lg sm:text-2xl font-bold text-black">
+                  {exp.duration}
+                </span>
                 {activeIndex === i ? <ChevronUp /> : <ChevronDown />}
               </div>
             </div>
@@ -88,9 +94,9 @@ const Experience = () => {
                 opacity: activeIndex === i ? 1 : 0,
               }}
               transition={{ duration: 0.3 }}
-              className="overflow-hidden mt-4"
+              className="overflow-hidden mt-2 sm:mt-4"
             >
-              <p className="text-gray-600">{exp.description}</p>
+              <p className="text-gray-600 text-sm sm:text-base">{exp.description}</p>
             </motion.div>
           </motion.div>
         ))}
