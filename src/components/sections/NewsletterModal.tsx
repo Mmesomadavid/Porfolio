@@ -68,7 +68,7 @@ const NewsletterModal = ({ onSubscribe, onClose, open }: NewsletterModalProps) =
             <Button
               type="button"
               onClick={handleSubscribe}
-              className="absolute right-1 inset-y-0 h-full rounded-full px-5 bg-black text-white hover:bg-gray-800 flex items-center justify-center"
+              className="absolute right-0 inset-y-0 h-full rounded-full px-5 bg-black text-white hover:bg-gray-800 flex items-center justify-center"
               aria-label="Send email"
             >
               <Send />
