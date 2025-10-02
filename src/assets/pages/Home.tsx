@@ -2,22 +2,34 @@
 
 import Header from "../../components/sections/Header"
 import Hero from "../../components/sections/Hero"
-import Skills from "../../components/sections/Skills"
+import TabNavigation from "../../components/sections/TabNavigation"
+import Featured from "../../components/sections/Featured"
 import AboutMe from "../../components/sections/AboutMe"
 import Experience from "../../components/sections/Experience"
 import Footer from "../../components/sections/Footer"
-// import other sections like About, Projects, Contact, etc.
 
 export default function Home() {
   return (
-    <div >
+    <div>
       <Header />
-      <Hero />
-      <Skills />
-      <AboutMe />
+      <section id="overview">
+        <Hero />
+      </section>
+      <TabNavigation />
+      <section id="work">
+        <Featured />
+      </section>
+      <section id="reviews">
+        {/* Reviews Component */}
+      </section>
+      <section id="services">
+        {/* Services Component */}
+      </section>
+      <section id="about">
+        <AboutMe />
+      </section>
       <Experience />
       <Footer />
-      {/* Add About, Projects, Contact here */}
     </div>
   )
 }

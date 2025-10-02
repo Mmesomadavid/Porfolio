@@ -1,105 +1,163 @@
-import { motion } from "framer-motion"
-import { Handshake } from "lucide-react"
-import { useEffect, useState } from "react"
-import heroBg1 from "../../assets/images/gradient-cube.png"
-import heroBg2 from "../../assets/images/gradient-crystal.png"
+"use client"
 
-const commands = [
-  "echo 'Deploying cloud infrastructure...'",
-  "terraform init",
-  "terraform plan",
-  "terraform apply -auto-approve",
-  "echo '✅ Deployment successful!'",
-]
+import { motion } from "framer-motion"
+import { Button } from "../ui/button"
+import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar"
+import { Zap, Star, Plus } from "lucide-react"
+import meImg from "../../assets/images/mex.jpg"
 
 const Hero = () => {
-  const [currentText, setCurrentText] = useState("")
-  const [commandIndex, setCommandIndex] = useState(0)
-  const [charIndex, setCharIndex] = useState(0)
-
-  useEffect(() => {
-    if (commandIndex < commands.length) {
-      if (charIndex < commands[commandIndex].length) {
-        const timeout = setTimeout(() => {
-          setCurrentText((prev) => prev + commands[commandIndex][charIndex])
-          setCharIndex(charIndex + 1)
-        }, 60)
-        return () => clearTimeout(timeout)
-      } else {
-        const timeout = setTimeout(() => {
-          setCurrentText("")
-          setCharIndex(0)
-          setCommandIndex((prev) =>
-            prev + 1 < commands.length ? prev + 1 : 0
-          )
-        }, 1200)
-        return () => clearTimeout(timeout)
-      }
-    }
-  }, [charIndex, commandIndex])
-
   return (
-    <section className="relative w-full min-h-screen flex flex-col items-center justify-center bg-white overflow-hidden px-4 md:px-6">
-      {/* Background blurred rocks */}
-      <motion.img
-        src={heroBg1}
-        alt="gradient rock 1"
-        className="absolute top-10 left-4 sm:left-10 w-40 sm:w-64 h-40 sm:h-64 object-cover blur-2xl opacity-20"
-        initial={{ scale: 0.8, opacity: 0 }}
-        animate={{ scale: 1, opacity: 0.5 }}
-        transition={{ duration: 2 }}
-      />
-      <motion.img
-        src={heroBg2}
-        alt="gradient rock 2"
-        className="absolute bottom-10 right-4 sm:right-10 w-56 sm:w-80 h-56 sm:h-80 object-cover blur-2xl opacity-20"
-        initial={{ scale: 0.8, opacity: 0 }}
-        animate={{ scale: 1, opacity: 0.4 }}
-        transition={{ duration: 2, delay: 0.5 }}
-      />
+    <div className="min-h-screen bg-white flex flex-col">
+      {/* Banner */}
+      <div className="relative w-full h-52 md:h-64 bg-slate-200">
+        <img
+          src="https://media.licdn.com/dms/image/v2/D4D16AQGRAZwNmO40JA/profile-displaybackgroundimage-shrink_350_1400/B4DZh7daPbHwAY-/0/1754417966074?e=1762387200&v=beta&t=xDoNgEk0ANQy_e3Oeu-isVf0kISNbZILIF1Cw_YGoe0"
+          alt="Banner"
+          className="w-full h-full object-cover"
+        />
+        {/* Profile Avatar */}
+        <div className="absolute -bottom-16 left-6 flex items-center">
+          <Avatar className="h-32 w-32 border-4 border-white shadow-lg">
+            <AvatarImage src={meImg} className="object-cover h-full w-full" />
+            <AvatarFallback>MD</AvatarFallback>
+          </Avatar>
+        </div>
+      </div>
 
-      {/* Hero Content */}
-      <div className="relative z-10 text-center">
-        <h1 className="text-4xl sm:text-6xl md:text-8xl lg:text-9xl font-bold leading-tight text-black">
-          Cloud <br /> Infrastructure
+      {/* Profile Info */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        className="mt-20 px-6 md:px-12 max-w-5xl"
+      >
+        <h1 className="text-3xl md:text-4xl font-bold text-slate-900">
+          Mmesoma David
         </h1>
-        <p className="mt-4 sm:mt-6 max-w-xs sm:max-w-xl mx-auto text-sm sm:text-lg text-gray-700">
-          Hi, I’m David. A DevOps & Cloud Infrastructure Engineer
+        <p className="mt-2 text-lg text-slate-600">
+          Cloud Infrastructure & Machine Learning Engineer | MlOps
         </p>
-        <div className="mt-6 sm:mt-8 flex flex-col sm:flex-row justify-center gap-3 sm:gap-4">
-          <motion.a
-            href="https://github.com/Mmesomadavid"
-            className="px-4 py-2 sm:px-6 sm:py-3 rounded-full bg-black text-white font-medium"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            Explore My Work
-          </motion.a>
-          <motion.a
-            href="https://www.linkedin.com/in/mmesoma-david/"
-            className="px-4 sm:px-6 flex gap-2 sm:gap-3 py-2 sm:py-3 rounded-full border border-black text-black font-medium justify-center"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            Let’s Connect
-            <Handshake />
-          </motion.a>
-        </div>
-      </div>
 
-      {/* Terminal UI - hidden on mobile */}
-      <div className="hidden sm:block absolute bottom-4 right-4 sm:bottom-6 sm:right-6 w-72 sm:w-96 bg-black text-green-400 font-mono text-xs sm:text-sm rounded-lg shadow-lg overflow-hidden border border-gray-800 z-20">
-        <div className="flex items-center px-3 py-2 bg-gray-900 border-b border-gray-800">
-          <span className="w-3 h-3 rounded-full bg-red-500 mr-2"></span>
-          <span className="w-3 h-3 rounded-full bg-yellow-500 mr-2"></span>
-          <span className="w-3 h-3 rounded-full bg-green-500"></span>
-          <p className="ml-4 text-gray-400 text-xs">bash</p>
+        {/* Buttons */}
+        <div className="mt-4 flex gap-3">
+          <Button className="gap-2 px-6 h-12 rounded-full">
+            <Zap className="h-5 w-5 fill-white" />
+            Get in touch
+          </Button>
+          <Button
+            variant="outline"
+            className="border-black/50 h-12 rounded-full"
+          >
+            <Plus />
+            Follow
+          </Button>
         </div>
-        <div className="px-3 py-2 h-36 sm:h-40 overflow-y-auto">
-          <p className="whitespace-pre-wrap code">{currentText}|</p>
+
+        {/* Stats */}
+        <div className="mt-6 grid grid-cols-2 sm:grid-cols-4 gap-6 border-t pt-6">
+          <div className="text-center">
+            <div className="text-xl font-bold text-slate-900">$10k+</div>
+            <div className="text-xs text-slate-500">Earned</div>
+          </div>
+          <div className="text-center">
+            <div className="text-xl font-bold text-slate-900">7x</div>
+            <div className="text-xs text-slate-500">Hired</div>
+          </div>
+          <div className="text-center">
+            <div className="flex items-center justify-center gap-1 text-xl font-bold text-slate-900">
+              <Star className="h-5 w-5 fill-current" />
+              5.00
+            </div>
+            <div className="text-xs text-slate-500">Rating</div>
+          </div>
+          <div className="text-center">
+            <div className="text-xl font-bold text-slate-900">66</div>
+            <div className="text-xs text-slate-500">Followers</div>
+          </div>
         </div>
-      </div>
-    </section>
+
+        {/* Bio Section */}
+        <div className="mt-8">
+          <h2 className="text-xl font-semibold text-slate-900">About</h2>
+          <p className="mt-3 text-slate-600 leading-relaxed">
+            I am a passionate Cloud Infrastructure & Machine Learning Engineer
+            with expertise in designing scalable cloud solutions, implementing
+            DevOps pipelines, and building AI-powered systems. My background
+            spans backend engineering, MLOps, automation, and data-driven
+            problem solving — enabling me to bridge the gap between software
+            engineering, infrastructure, and applied artificial intelligence.
+          </p>
+        </div>
+
+        {/* Skills Section */}
+        <div className="mt-8">
+          <h2 className="text-xl font-semibold text-slate-900">Skills</h2>
+          <div className="mt-3 flex flex-wrap gap-2">
+            {[
+              // --- AI & Machine Learning Engineering ---
+              "Python",
+              "Pandas",
+              "NumPy",
+              "Scikit-learn",
+              "TensorFlow",
+              "PyTorch",
+              "Keras",
+              "Hugging Face Transformers",
+              "LangChain",
+              "OpenAI API",
+              "MLflow",
+              "Weights & Biases (W&B)",
+              "Jupyter Notebooks",
+              "Data Visualization (Matplotlib, Seaborn, Plotly)",
+              "Feature Engineering",
+              "Supervised Learning",
+              "Unsupervised Learning",
+              "Deep Learning",
+              "NLP",
+              "Computer Vision",
+              "Reinforcement Learning",
+              "Generative AI",
+              "MLOps",
+              "Model Deployment",
+              "Vector Databases (Pinecone, Weaviate, FAISS)",
+
+              // --- Cloud Infrastructure / DevOps ---
+              "Linux",
+              "Bash/Shell Scripting",
+              "Git & GitHub/GitLab",
+              "CI/CD (GitHub Actions, GitLabCI, Jenkins)",
+              "Docker",
+              "Kubernetes",
+              "Helm",
+              "Terraform",
+              "Ansible",
+              "Prometheus",
+              "Grafana",
+              "AWS (EC2, S3, Lambda, EKS, SageMaker)",
+              "Google Cloud (GCP)",
+              "Azure",
+              "NGINX",
+              "Networking & Security",
+              "Monitoring & Logging (ELK, Loki, Datadog)",
+              "ArgoCD",
+              "Service Mesh (Istio, Linkerd)",
+              "Cloudflare",
+              "Databases (PostgreSQL, MongoDB, Redis)",
+              "API Development",
+              "Serverless Frameworks",
+            ].map((skill) => (
+              <span
+                key={skill}
+                className="px-3 py-1 text-sm rounded-full bg-slate-100 text-slate-700 hover:bg-slate-200 transition"
+              >
+                {skill}
+              </span>
+            ))}
+          </div>
+        </div>
+      </motion.div>
+    </div>
   )
 }
 
