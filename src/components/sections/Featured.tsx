@@ -20,7 +20,7 @@ const sampleProjects: Project[] = [
   {
     id: 1,
     title: "Cloud Automation with Terraform & AWS",
-    image: "https://www.reuters.com/resizer/v2/REJ4AJPH7FOH5EUVLH346UP5QI.jpg?auth=7f56c1b2b34b9dc7f0a7d47102e831f81547958021b389b842345fa2ccd4e162&width=640&quality=80",
+    image: "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/8d/b1/df/8db1df3e-e2f4-752e-3664-545c217b73d6/AppIcon-0-0-1x_U007epad-0-1-0-85-220.png/1200x630wa.png",
     description:
       "End-to-end infrastructure deployment system using Terraform, AWS, Docker, and CI/CD pipelines. Automated scaling and monitoring included.",
     skills: ["Terraform", "AWS", "CI/CD", "Docker", "Kubernetes", "Monitoring"],
