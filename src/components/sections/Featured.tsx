@@ -8,7 +8,6 @@ import { Skeleton } from "../ui/skeleton"
 import { HoverCard, HoverCardContent, HoverCardTrigger } from "../ui/hover-card"
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "../ui/dialog"
 
-// Example featured project type
 type Project = {
   id: number
   title: string
@@ -20,38 +19,51 @@ type Project = {
 const sampleProjects: Project[] = [
   {
     id: 1,
-    title: "Cloud Automation System",
-    image: "/project1.png",
-    description: "Infrastructure as Code deployment using Terraform and AWS.",
+    title: "Cloud Automation with Terraform & AWS",
+    image: "https://www.reuters.com/resizer/v2/REJ4AJPH7FOH5EUVLH346UP5QI.jpg?auth=7f56c1b2b34b9dc7f0a7d47102e831f81547958021b389b842345fa2ccd4e162&width=640&quality=80",
+    description:
+      "End-to-end infrastructure deployment system using Terraform, AWS, Docker, and CI/CD pipelines. Automated scaling and monitoring included.",
     skills: ["Terraform", "AWS", "CI/CD", "Docker", "Kubernetes", "Monitoring"],
   },
   {
     id: 2,
-    title: "AI Model Deployment",
-    image: "/project2.png",
-    description: "Deployed NLP model with FastAPI, Docker & K8s.",
-    skills: ["Python", "FastAPI", "Docker", "Kubernetes"],
+    title: "MLOps Pipeline for Model Deployment",
+    image: "https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mjd8fHBpcGVsaW5lfGVufDB8fDB8fHww",
+    description:
+      "Built an automated MLOps pipeline to train, test, and deploy ML models on Kubernetes with monitoring and auto-scaling.",
+    skills: ["Python", "MLflow", "Docker", "Kubernetes", "GitHub Actions"],
   },
   {
     id: 3,
-    title: "Portfolio Website",
-    image: "/project3.png",
-    description: "Personal site with Next.js, Tailwind, and shadcn/ui.",
-    skills: ["Next.js", "Tailwind", "Framer Motion", "shadcn/ui"],
+    title: "Jarvis-Lite AI Assistant",
+    image: "https://plus.unsplash.com/premium_photo-1701113010437-1709c96aa539?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OTd8fG1hY2hpbmUlMjBsZWFybmluZ3xlbnwwfHwwfHx8MA%3D%3D",
+    description:
+      "Personal AI assistant with speech-to-text, text-to-speech, memory via vector DB, and LLM-powered chat. Deployed using Docker and CI/CD.",
+    skills: ["LLMs", "Whisper", "FastAPI", "Vector DB", "Docker", "DevOps"],
   },
   {
     id: 4,
-    title: "Monitoring Dashboard",
-    image: "/project4.png",
-    description: "Built Grafana dashboards integrated with Prometheus for monitoring.",
-    skills: ["Grafana", "Prometheus", "Alertmanager", "DevOps"],
+    title: "Monitoring & Observability Dashboard",
+    image: "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fv77yy73dn8y58ix23rz1.png",
+    description:
+      "Built monitoring system using Prometheus, Grafana, and Alertmanager for real-time infrastructure observability.",
+    skills: ["Prometheus", "Grafana", "Alertmanager", "DevOps"],
   },
   {
     id: 5,
-    title: "AI Chatbot",
-    image: "/project5.png",
-    description: "Conversational AI with RAG pipeline deployed on cloud.",
-    skills: ["LangChain", "Pinecone", "OpenAI", "Next.js"],
+    title: "AI-Powered Resume/Docs Q&A Bot",
+    image: "https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8YWl8ZW58MHx8MHx8fDA%3D",
+    description:
+      "Implemented Retrieval-Augmented Generation (RAG) chatbot to answer queries from resumes and technical documents.",
+    skills: ["LangChain", "ChromaDB", "OpenAI", "Next.js"],
+  },
+  {
+    id: 6,
+    title: "CI/CD System with GitHub Actions",
+    image: "https://www.researchgate.net/publication/331131851/figure/fig1/AS:757080780705793@1557513532658/CI-CD-Architecture-using-Docker.ppm",
+    description:
+      "Automated build, test, and deployment workflows for fullstack apps using GitHub Actions, Docker, and cloud hosting.",
+    skills: ["CI/CD", "Docker", "GitHub Actions", "Kubernetes"],
   },
 ]
 
@@ -69,7 +81,7 @@ const Featured = () => {
   )
 
   useEffect(() => {
-    const timer = setTimeout(() => setLoading(false), 1500) // simulate loading
+    const timer = setTimeout(() => setLoading(false), 1500)
     return () => clearTimeout(timer)
   }, [])
 
@@ -78,7 +90,9 @@ const Featured = () => {
       {/* Header */}
       <div className="flex items-center justify-between mb-10">
         <h2 className="text-3xl font-bold">Featured</h2>
-        <Button variant="outline" className="rounded-full">View all</Button>
+        <Button variant="outline" className="rounded-full">
+          View all
+        </Button>
       </div>
 
       {/* Projects Grid */}
@@ -115,12 +129,13 @@ const Featured = () => {
                           alt={project.title}
                           className="rounded-lg w-full h-40 object-cover"
                         />
-                        <h3 className="mt-4 text-xl font-semibold">{project.title}</h3>
+                        <h3 className="mt-4 text-xl font-semibold">
+                          {project.title}
+                        </h3>
                         <p className="text-sm text-slate-600 mt-2 line-clamp-2">
                           {project.description}
                         </p>
 
-                        {/* Skill Tags */}
                         <div className="flex flex-wrap gap-2 mt-4">
                           {project.skills.slice(0, 3).map((skill, idx) => (
                             <span
@@ -143,7 +158,9 @@ const Featured = () => {
                   {/* Hover Details */}
                   <HoverCardContent className="w-80">
                     <h4 className="font-bold">{project.title}</h4>
-                    <p className="text-sm text-slate-600 mt-2">{project.description}</p>
+                    <p className="text-sm text-slate-600 mt-2">
+                      {project.description}
+                    </p>
                   </HoverCardContent>
                 </HoverCard>
               </motion.div>
