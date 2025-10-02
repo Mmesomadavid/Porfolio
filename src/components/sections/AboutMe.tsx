@@ -37,12 +37,22 @@ const AboutMe = () => {
       >
         {/* Left Column: Info */}
         <motion.div variants={itemVariant} className="flex flex-col justify-start">
-          <span className="text-sm uppercase text-gray-500 mb-2 tracking-wider">About Me</span>
+          <span className="text-sm uppercase text-gray-500 mb-2 tracking-wider">
+            About Me
+          </span>
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            DevOps & Cloud Infrastructure Engineer
+            DevOps, Cloud & AI/ML Engineer
           </h2>
           <p className="text-gray-600 mb-6">
-            I am a DevOps and Cloud Infrastructure Engineer with 3–4 years of experience in designing, deploying, and maintaining scalable systems. I am also a tech blogger and a rising voice in the technology space, sharing insights and engaging with the tech community on LinkedIn.
+            I am a Cloud Infrastructure and AI/ML Engineer with hands-on
+            experience designing scalable systems, automating workflows, and
+            deploying intelligent solutions. My expertise spans DevOps
+            pipelines, cloud-native architecture, and machine learning systems —
+            from data preprocessing to deploying production-ready AI
+            applications.  
+            I am also passionate about sharing knowledge, building projects that
+            bridge infrastructure and AI, and contributing to the growing tech
+            community.
           </p>
 
           {/* Image container */}
@@ -57,7 +67,7 @@ const AboutMe = () => {
 
           <Button
             variant="outline"
-            className="flex items-center gap-2 h-14 bg-gray-900 text-white mt-4 md:mt-6 rounded-full uppercase  hover:bg-gray-900/90 hover:text-white transition-all w-max"
+            className="flex items-center gap-2 h-14 bg-gray-900 text-white mt-4 md:mt-6 rounded-full uppercase hover:bg-gray-900/90 hover:text-white transition-all w-max"
           >
             <span>Follow Me</span>
             <ArrowRight className="h-4 w-4" />
@@ -69,26 +79,25 @@ const AboutMe = () => {
           variants={containerVariant}
           className="grid grid-cols-1 md:grid-cols-2 gap-6"
         >
-          {/* Card Template */}
           {[
             {
               title: "Infrastructure Automation",
-              desc: "Building scalable and resilient cloud infrastructure with IaC and automation tools.",
+              desc: "Designing and deploying scalable cloud infrastructure using IaC and DevOps tools.",
               isDark: false,
             },
             {
-              title: "CI/CD Pipelines",
-              desc: "Implementing continuous integration and delivery pipelines for faster and reliable deployments.",
+              title: "Machine Learning Systems",
+              desc: "Building end-to-end ML workflows, from data pipelines to model deployment in production.",
               isDark: false,
             },
             {
-              title: "Tech Blogging & Community",
-              desc: "Sharing insights and contributing to the tech community as a blogger and LinkedIn tech voice.",
+              title: "Generative AI & NLP",
+              desc: "Exploring LLMs, conversational AI, and applied NLP for building next-gen intelligent assistants.",
               isDark: true,
             },
             {
-              title: "Cloud Optimization",
-              desc: "Optimizing cloud resources for performance, cost-efficiency, and scalability.",
+              title: "CI/CD & MLOps",
+              desc: "Implementing automated pipelines for reliable app and ML model deployment at scale.",
               isDark: false,
             },
           ].map((card, i) => (
@@ -98,28 +107,29 @@ const AboutMe = () => {
                   card.isDark ? "bg-gray-900 text-white" : "border border-gray-200"
                 } w-full h-64`}
               >
-                {/* Ribbon for dark card */}
                 {card.isDark && (
                   <div className="absolute top-0 right-0 bg-red-500 w-24 h-6 transform rotate-12 origin-top-right"></div>
                 )}
 
                 <CardContent className="flex flex-col justify-end h-full pb-6">
-                  {/* Top line above title */}
                   <div
                     className={`h-[2px] w-10 mb-2 ${
                       card.isDark ? "bg-white" : "bg-black"
                     }`}
                   ></div>
 
-                  {/* Card Title */}
-                  <CardTitle className="text-xl md:text-2xl mb-1">{card.title}</CardTitle>
+                  <CardTitle className="text-xl md:text-2xl mb-1">
+                    {card.title}
+                  </CardTitle>
 
-                  {/* Description */}
-                  <CardDescription className={`text-sm ${card.isDark ? "text-gray-200" : "text-gray-600"} mb-3`}>
+                  <CardDescription
+                    className={`text-sm ${
+                      card.isDark ? "text-gray-200" : "text-gray-600"
+                    } mb-3`}
+                  >
                     {card.desc}
                   </CardDescription>
 
-                  {/* Arrow */}
                   {card.isDark ? (
                     <motion.div
                       whileHover={{ scale: 1.5, x: 20, y: -20 }}
