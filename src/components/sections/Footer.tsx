@@ -71,9 +71,7 @@ const Footer = () => {
           <div className="flex flex-col gap-4">
             <h2 className="text-2xl font-bold Bodoni">Mmesoma David</h2>
             <p className="text-sm max-w-xs text-gray-200">
-              DevOps & Cloud Infrastructure Engineer.  
-              I specialize in building scalable, secure, and efficient systems
-              that help businesses move faster in the cloud.
+              I specialize in designing and deploying scalable, secure, and efficient cloud-native systems while building intelligent AI/ML solutions that drive business growth. My expertise bridges modern DevOps practices, MLOps, and cloud infrastructure, enabling organizations to innovate faster with automation, data-driven insights, and production-ready AI.
             </p>
             {/* Socials */}
             <div className="flex gap-4 mt-2">
@@ -100,12 +98,11 @@ const Footer = () => {
           <div className="text-sm text-gray-200 space-y-2">
             <p className="font-semibold text-white">Email</p>
             <p>mmesomadavid1@yahoo.com</p>
+            <span>-- or --</span>
+            <p>chukwunoyelummesoma1@gmail.com</p>
           </div>
 
-          <div className="text-sm text-gray-200 space-y-2">
-            <p className="font-semibold text-white">Phone</p>
-            <p>+1 608-486-9035</p>
-          </div>
+          
         </motion.div>
 
         {/* Divider */}

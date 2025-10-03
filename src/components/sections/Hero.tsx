@@ -3,7 +3,7 @@
 import { motion } from "framer-motion"
 import { Button } from "../ui/button"
 import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar"
-import { Zap, Star, Plus, Github, Linkedin } from "lucide-react"
+import { Zap, Star, Plus, Github, Linkedin, Twitter } from "lucide-react"
 import {
   HoverCard,
   HoverCardContent,
@@ -75,6 +75,15 @@ const Hero = () => {
                 >
                   <Linkedin className="h-6 w-6" />
                   <span className="text-xs mt-1">LinkedIn</span>
+                </a>
+                <a
+                  href="https://x.com/chukwunoyelu"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex flex-col items-center text-slate-700 hover:text-black transition"
+                >
+                  <Twitter className="h-6 w-6" />
+                  <span className="text-xs mt-1">X(Twitter)</span>
                 </a>
                 <a
                   href="https://github.com/Mmesomadavid"
