@@ -13,32 +13,18 @@ interface ExperienceItem {
 
 const experiences: ExperienceItem[] = [
   {
-    title: "Graphic Designer",
-    company: "Dewa-Dewi Tech",
-    duration: "2015 - 2017",
+    title: "Junior DevOps Engineer",
+    company: "@KalKey",
+    duration: "2022 - 2022",
     description:
-      "Designed creative and functional visual designs to support brands and digital products.",
+      "During a few-month internship, I was assigned and successfully completed multiple DevOps projects. Responsibilities included building and automating cloud infrastructure on AWS, developing and maintaining CI/CD pipelines with GitLab, and managing deployments with Docker and Kubernetes. I also implemented Terraform-based infrastructure provisioning, set up Prometheus/Grafana monitoring, and delivered solutions that improved system reliability and optimized operational costs.",
   },
   {
-    title: "UI/UX Designer",
-    company: "Odama Studio",
-    duration: "2017 - 2019",
+    title: "Software Developer & Chief Technology Officer",
+    company: "@Suwk",
+    duration: "2022 - 2023",
     description:
-      "Created interactive and engaging digital experiences through UI/UX design principles.",
-  },
-  {
-    title: "UX Researcher",
-    company: "Korsa Studio",
-    duration: "2018 - 2021",
-    description:
-      "Conducted user research, interviews, and testing to inform effective design solutions.",
-  },
-  {
-    title: "Product Designer",
-    company: "Apple, Inc",
-    duration: "2021 - Now",
-    description:
-      "Lead design of end-to-end products ensuring intuitive UX, visual consistency, and high-quality delivery.",
+      "Worked at Suwk Africs, where I helped build a platform aimed at giving people in less-privileged areas access to free skill-elevating resources and also a space to trade their skills for income.",
   },
 ]
 
