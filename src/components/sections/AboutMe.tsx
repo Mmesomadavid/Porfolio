@@ -3,7 +3,6 @@
 import { motion } from "framer-motion"
 import type { Variants, Transition } from "framer-motion"
 import { Card, CardContent, CardTitle, CardDescription } from "../ui/card"
-import { Button } from "../ui/button"
 import { ArrowRight } from "lucide-react"
 import MeImg from '../../assets/images/me.jpg'
 
@@ -65,13 +64,7 @@ const AboutMe = () => {
             />
           </div>
 
-          <Button
-            variant="outline"
-            className="flex items-center gap-2 h-14 bg-gray-900 text-white mt-4 md:mt-6 rounded-full uppercase hover:bg-gray-900/90 hover:text-white transition-all w-max"
-          >
-            <span>Follow Me</span>
-            <ArrowRight className="h-4 w-4" />
-          </Button>
+          
         </motion.div>
 
         {/* Right Column: Cards Grid */}
