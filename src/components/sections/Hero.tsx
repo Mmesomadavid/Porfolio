@@ -3,7 +3,12 @@
 import { motion } from "framer-motion"
 import { Button } from "../ui/button"
 import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar"
-import { Zap, Star, Plus } from "lucide-react"
+import { Zap, Star, Plus, Github, Linkedin } from "lucide-react"
+import {
+  HoverCard,
+  HoverCardContent,
+  HoverCardTrigger,
+} from "../ui/hover-card"
 import meImg from "../../assets/images/mex.jpg"
 
 const Hero = () => {
@@ -45,13 +50,44 @@ const Hero = () => {
             <Zap className="h-5 w-5 fill-white" />
             Get in touch
           </Button>
-          <Button
-            variant="outline"
-            className="border-black/50 h-11 sm:h-12 rounded-full"
-          >
-            <Plus />
-            Follow
-          </Button>
+
+          {/* HoverCard Follow */}
+          <HoverCard>
+            <HoverCardTrigger asChild>
+              <Button
+                variant="outline"
+                className="border-black/50 h-11 sm:h-12 rounded-full"
+              >
+                <Plus />
+                Follow
+              </Button>
+            </HoverCardTrigger>
+            <HoverCardContent className="w-64 flex flex-col items-center gap-4">
+              <p className="text-sm font-semibold text-slate-700">
+                Follow me on:
+              </p>
+              <div className="flex gap-6">
+                <a
+                  href="https://www.linkedin.com/in/mmesoma-david/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex flex-col items-center text-slate-700 hover:text-blue-600 transition"
+                >
+                  <Linkedin className="h-6 w-6" />
+                  <span className="text-xs mt-1">LinkedIn</span>
+                </a>
+                <a
+                  href="https://github.com/Mmesomadavid"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex flex-col items-center text-slate-700 hover:text-black transition"
+                >
+                  <Github className="h-6 w-6" />
+                  <span className="text-xs mt-1">GitHub</span>
+                </a>
+              </div>
+            </HoverCardContent>
+          </HoverCard>
         </div>
 
         {/* Stats */}
