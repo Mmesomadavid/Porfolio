@@ -26,7 +26,7 @@ const Footer = () => {
         className="px-6 md:px-16 lg:px-24 py-20 flex flex-col md:flex-row items-start md:items-center justify-between gap-8"
       >
         <h2 className="text-4xl md:text-7xl font-semibold leading-tight">
-          Let‘s Connect <br /> There
+          Let‘s Connect 
         </h2>
 
         {/* Hire Button */}
