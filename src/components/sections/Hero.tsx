@@ -94,10 +94,10 @@ const Hero = () => {
         <div className="mt-6 grid grid-cols-2 sm:grid-cols-4 gap-6 border-t pt-6">
           <div className="text-center">
             <div className="text-lg sm:text-xl font-bold text-slate-900">$10k+</div>
-            <div className="text-xs text-slate-500">Earned</div>
+            <div className="text-xs text-slate-500">Earned in Contracts</div>
           </div>
           <div className="text-center">
-            <div className="text-lg sm:text-xl font-bold text-slate-900">7x</div>
+            <div className="text-lg sm:text-xl font-bold text-slate-900">3x</div>
             <div className="text-xs text-slate-500">Hired</div>
           </div>
           <div className="text-center">
@@ -105,11 +105,11 @@ const Hero = () => {
               <Star className="h-5 w-5 fill-current" />
               5.00
             </div>
-            <div className="text-xs text-slate-500">Rating</div>
+            <div className="text-xs text-slate-500">Rating for the job</div>
           </div>
           <div className="text-center">
-            <div className="text-lg sm:text-xl font-bold text-slate-900">66</div>
-            <div className="text-xs text-slate-500">Followers</div>
+            <div className="text-lg sm:text-xl font-bold text-slate-900">3+</div>
+            <div className="text-xs text-slate-500">Years Of Experience</div>
           </div>
         </div>
 
