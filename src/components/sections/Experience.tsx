@@ -24,7 +24,7 @@ const experiences: ExperienceItem[] = [
     company: "@Suwk",
     duration: "2022 - 2023",
     description:
-      "Worked at Suwk Africs, where I helped build a platform aimed at giving people in less-privileged areas access to free skill-elevating resources and also a space to trade their skills for income.",
+      "Worked at Suwk Africa, where I helped build a platform aimed at giving people in less-privileged areas access to free skill-elevating resources and also a space to trade their skills for income.",
   },
 ]
 
